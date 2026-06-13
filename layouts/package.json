@@ -1,0 +1,17 @@
+{
+  "name": "@slideforge/layouts",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "./index.ts",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@slideforge/sdk": "workspace:*",
+    "@slideforge/schema": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

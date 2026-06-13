@@ -1,0 +1,32 @@
+name: Release Layout Registry
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'layouts/**'
+      - 'community/**'
+
+jobs:
+  registry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install
+      - run: pnpm --filter @slideforge/schema build && pnpm --filter api exec tsx -e "
+          import { loadLayoutRegistry, writeRegistryToDisk } from './src/services/layout-registry.ts';
+          await loadLayoutRegistry();
+          writeRegistryToDisk('public/layouts/registry.json');
+        "
+        working-directory: apps/api
+      - uses: actions/upload-artifact@v4
+        with:
+          name: layout-registry
+          path: apps/api/public/layouts/registry.json

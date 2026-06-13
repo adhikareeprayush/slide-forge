@@ -1,13 +1,30 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* Light-table / projection booth palette */
+  --sf-ink: #0c0b0a;
+  --sf-ink-soft: #1a1814;
+  --sf-paper: #f4efe6;
+  --sf-paper-dim: #e8e0d4;
+  --sf-amber: #d4a054;
+  --sf-signal: #3d9b8f;
+  --sf-muted: #6b6560;
+  --sf-faint: #9a948c;
+  --sf-border: rgba(12, 11, 10, 0.1);
+  --sf-border-light: rgba(244, 239, 230, 0.12);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --sf-bg: var(--sf-ink);
+  --sf-bg-elevated: #141210;
+  --sf-text: var(--sf-paper);
+  --sf-text-muted: #b8b0a6;
+  --sf-primary: var(--sf-amber);
+  --sf-accent: var(--sf-signal);
+
+  --sf-font-display: var(--font-display), 'Instrument Serif', Georgia, serif;
+  --sf-font-body: var(--font-body), 'DM Sans', system-ui, sans-serif;
+  --sf-font-mono: ui-monospace, 'SF Mono', monospace;
+
+  --sf-radius: 4px;
+  --sf-shadow: 0 32px 64px -16px rgba(0, 0, 0, 0.65);
+  --sf-beam: radial-gradient(ellipse 70% 45% at 50% 0%, rgba(212, 160, 84, 0.14), transparent 70%);
 }
 
 html,
@@ -17,8 +34,10 @@ body {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--sf-text);
+  background: var(--sf-bg);
+  font-family: var(--sf-font-body);
+  -webkit-font-smoothing: antialiased;
 }
 
 * {
@@ -32,19 +51,46 @@ a {
   text-decoration: none;
 }
 
-.imgDark {
-  display: none;
+:focus-visible {
+  outline: 2px solid var(--sf-amber);
+  outline-offset: 2px;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
+}
 
-  .imgLight {
-    display: none;
+@keyframes sf-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
   }
-  .imgDark {
-    display: unset;
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sf-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes sf-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
   }
 }

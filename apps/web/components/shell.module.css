@@ -1,0 +1,70 @@
+.shell {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.beam {
+  position: fixed;
+  inset: 0;
+  background: var(--sf-beam);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--sf-border-light);
+  background: rgba(12, 11, 10, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-family: var(--sf-font-display);
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
+  color: var(--sf-amber);
+  margin-right: auto;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  font-size: 0.875rem;
+  color: var(--sf-text-muted);
+}
+
+.nav a:hover {
+  color: var(--sf-text);
+}
+
+.navCta {
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--sf-radius);
+  border: 1px solid rgba(212, 160, 84, 0.4);
+  color: var(--sf-amber) !important;
+}
+
+.badge {
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--sf-faint);
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    display: none;
+  }
+}

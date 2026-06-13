@@ -1,0 +1,142 @@
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+.back {
+  display: inline-block;
+  color: var(--sf-text-muted);
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+.back:hover {
+  color: var(--sf-amber);
+}
+
+.layout {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 720px) {
+  .layout {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.preview {
+  aspect-ratio: 16 / 9;
+  background: var(--sf-paper);
+  border-radius: var(--sf-radius);
+  overflow: hidden;
+  box-shadow: var(--sf-shadow);
+}
+
+.preview svg {
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  font-family: var(--sf-font-display);
+  font-size: 2rem;
+  margin-bottom: 0.35rem;
+}
+
+.meta,
+.uses {
+  color: var(--sf-text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  background: rgba(212, 160, 84, 0.15);
+  color: var(--sf-amber);
+  border-radius: 2px;
+}
+
+.sectionTitle {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--sf-faint);
+  margin: 1.5rem 0 0.75rem;
+}
+
+.slotList {
+  list-style: none;
+  font-size: 0.875rem;
+  line-height: 1.8;
+  color: var(--sf-text-muted);
+}
+
+.slotList code {
+  color: var(--sf-accent);
+  font-family: var(--sf-font-mono);
+  font-size: 0.8rem;
+}
+
+.instructions {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--sf-text-muted);
+}
+
+.link {
+  color: var(--sf-accent);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.useBtn,
+.createBtn {
+  padding: 0.6rem 1.1rem;
+  font-size: 0.875rem;
+  border-radius: var(--sf-radius);
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.useBtn {
+  background: transparent;
+  border: 1px solid var(--sf-border-light);
+  color: var(--sf-paper);
+}
+
+.useBtn:hover {
+  border-color: var(--sf-amber);
+}
+
+.createBtn {
+  background: var(--sf-amber);
+  color: var(--sf-ink);
+  font-weight: 600;
+}
+
+.createBtn:hover {
+  filter: brightness(1.05);
+}
+
+.loading {
+  color: var(--sf-text-muted);
+}
