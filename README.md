@@ -28,8 +28,8 @@ Open-source AI presentation platform. Describe a topic, watch slides stream in l
 ### 1. Clone and install
 
 ```sh
-git clone https://github.com/your-org/slideforge.git
-cd slideforge
+git clone https://github.com/adhikareeprayush/slide-forge.git
+cd slide-forge
 pnpm install
 ```
 
@@ -227,6 +227,8 @@ Community layouts go in `community/<name>/` and are picked up automatically when
 | `pnpm infra:up` | Start infra and wait for readiness |
 | `pnpm --filter api test:generation` | End-to-end generation test (needs NVIDIA key) |
 | `pnpm --filter api test:export` | Export pipeline test |
+| `pnpm github:labels` | Sync GitHub labels (`gh auth login` or `GITHUB_TOKEN`) |
+| `pnpm github:issues` | Bootstrap 30 contribution issues (`gh auth login` recommended) |
 
 ---
 
@@ -263,6 +265,16 @@ See [`.env.example`](.env.example) for the full list. Phase 1 (preview only) nee
 
 ## Contributing
 
-Community layouts live in `community/<name>/`. Scaffold with the SDK CLI, validate, preview, then open a pull request. Built-in layouts in `layouts/` follow the same `slide.config.ts` format.
+Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for setup and PR guidelines.
+
+- **Good first issues:** [github.com/adhikareeprayush/slide-forge/labels/good%20first%20issue](https://github.com/adhikareeprayush/slide-forge/labels/good%20first%20issue)
+- **Layout submissions:** [community/README.md](community/README.md)
+- **Security:** [SECURITY.md](SECURITY.md) — adhikareeprayush@gmail.com
+
+Maintainer: [@adhikareeprayush](https://github.com/adhikareeprayush)
+
+## License
+
+[MIT](LICENSE) — Copyright (c) 2026 Prayush Adhikaree
 
 For the full implementation roadmap and schema spec, see [`implementation_plan.md`](implementation_plan.md).

@@ -11,7 +11,9 @@
     "db:up": "docker compose up -d postgres minio",
     "db:setup": "node scripts/wait-for-postgres.mjs && pnpm --filter api db:push && pnpm --filter api db:seed",
     "infra:up": "node scripts/infra-up.mjs",
-    "infra:redis": "docker compose up -d redis"
+    "infra:redis": "docker compose up -d redis",
+    "github:labels": "node scripts/sync-github-labels.mjs",
+    "github:issues": "node scripts/sync-github-labels.mjs && node scripts/create-github-issues.mjs"
   },
   "devDependencies": {
     "prettier": "^3.7.4",

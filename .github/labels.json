@@ -1,0 +1,23 @@
+[
+  { "name": "good first issue", "color": "7057ff", "description": "Good for newcomers" },
+  { "name": "help wanted", "color": "008672", "description": "Maintainer wants external help" },
+  { "name": "bug", "color": "d73a4a", "description": "Something isn't working" },
+  { "name": "feature", "color": "a2eeef", "description": "New feature or enhancement" },
+  { "name": "documentation", "color": "0075ca", "description": "Docs and guides" },
+  { "name": "layouts", "color": "fbca04", "description": "Slide layout definitions" },
+  { "name": "community", "color": "e99695", "description": "Community registry and contributions" },
+  { "name": "frontend", "color": "1d76db", "description": "Next.js web app" },
+  { "name": "api", "color": "5319e7", "description": "Express API" },
+  { "name": "sdk", "color": "006b75", "description": "@slideforge/sdk and CLI" },
+  { "name": "testing", "color": "bfd4f2", "description": "Tests and coverage" },
+  { "name": "ci", "color": "ededed", "description": "GitHub Actions workflows" },
+  { "name": "design", "color": "d4c5f9", "description": "Visual design and UX" },
+  { "name": "ux", "color": "c5def5", "description": "User experience improvements" },
+  { "name": "editor", "color": "f9d0c4", "description": "Slide editor" },
+  { "name": "infrastructure", "color": "333333", "description": "Docker, deploy, ops" },
+  { "name": "self-hosting", "color": "0e8a16", "description": "Self-hosted deployment" },
+  { "name": "database", "color": "b60205", "description": "Schema and migrations" },
+  { "name": "auth", "color": "fef2c0", "description": "Authentication and users" },
+  { "name": "ai", "color": "0052cc", "description": "AI providers and generation" },
+  { "name": "epic", "color": "3e4b9e", "description": "Tracking issue for a larger effort" }
+]

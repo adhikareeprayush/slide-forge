@@ -1,0 +1,57 @@
+name: Layout submission
+description: Propose or track a new community slide layout
+title: "[Layout]: "
+labels: ["layouts", "community"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Read the [community layout guide](https://github.com/adhikareeprayush/slide-forge/blob/main/community/README.md) before submitting.
+
+  - type: input
+    id: layout-id
+    attributes:
+      label: Layout ID (kebab-case)
+      placeholder: comparison-table
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - title
+        - content
+        - media
+        - split
+        - data
+        - quote
+        - closing
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Layout description
+      description: When should the AI pick this layout? What slots does it include?
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have run `slideforge validate` on my layout
+        - label: I included `thumbnail.svg` (16:9)
+        - label: I included `README.md` with usage notes
+        - label: Slot positions use REGIONS or valid grid percentages (no overflow)
+
+  - type: checkboxes
+    id: pr
+    attributes:
+      label: Pull request
+      options:
+        - label: I will open (or have opened) a PR under `community/<layout-id>/`
