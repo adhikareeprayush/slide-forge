@@ -4,6 +4,7 @@ import pc from 'picocolors';
 import { validateSlideFile } from './validate';
 import { scaffoldLayout } from './scaffold';
 import { previewSlide } from './preview';
+import type { PublishOptions } from './publish';
 
 const program = new Command();
 
@@ -75,7 +76,11 @@ program
   .action(async (path: string, opts: { repo?: string }) => {
     try {
       const { publishLayout } = await import('./publish');
-      await publishLayout({ path, repo: opts.repo });
+      const publishOptions: PublishOptions = { path };
+      if (opts.repo !== undefined) {
+        publishOptions.repo = opts.repo;
+      }
+      await publishLayout(publishOptions);
       console.log(pc.green('✓ Ready for community submission'));
     } catch (err) {
       console.error(pc.red('✗ Publish failed'));
