@@ -1,4 +1,4 @@
-import './load-env';
+import './load-env.js';
 import { createServer } from 'node:http';
 import express from 'express';
 import cors from 'cors';

@@ -75,7 +75,7 @@ program
   .action(async (path: string, opts: { repo?: string }) => {
     try {
       const { publishLayout } = await import('./publish');
-      await publishLayout({ path, repo: opts.repo });
+    await publishLayout({ path, ...(opts.repo !== undefined && { repo: opts.repo }) });
       console.log(pc.green('✓ Ready for community submission'));
     } catch (err) {
       console.error(pc.red('✗ Publish failed'));
