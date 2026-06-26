@@ -255,6 +255,12 @@ Production checklist:
 - Run `pnpm --filter api build && pnpm --filter web build`
 - Use `pnpm --filter api start` and `pnpm --filter web start`, or deploy containers per app
 
+## Self-Hosting with Docker
+
+You can spin up the entire full-stack application (Web, API, Worker, Database, Cache, and Storage) using a single command:
+
+```bash
+docker-compose up --build -d
 ---
 
 ## Environment variables
